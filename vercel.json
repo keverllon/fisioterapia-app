@@ -1,0 +1,7 @@
+{
+  "build": {
+    "command": "",
+    "output": "fisioterapia_app"
+  },
+  "public": "fisioterapia_app"
+}
