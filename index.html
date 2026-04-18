@@ -3,11 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=fisioterapia_app/">
+    <meta name="theme-color" content="#2196F3">
+    <meta name="description" content="DR Roberta - Guia de Patologias e Tratamentos de Fisioterapia">
     <title>DR Roberta - Fisioterapia</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Redirecionando...</p>
-    <p><a href="fisioterapia_app/">Clique aqui se não for redirecionado</a></p>
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🩺</div>
+                <div class="logo-text">
+                    <h1>DR Roberta</h1>
+                    <span>Fisioterapia</span>
+                </div>
+            </div>
+            <button onclick="location.reload()" style="background:rgba(255,255,255,0.2);border:none;width:44px;height:44px;border-radius:12px;cursor:pointer;font-size:20px" title="Recarregar">🔄</button>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <!-- Search -->
+        <div class="search-container">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Buscar patologia, causa ou tratamento...">
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="categories-container">
+            <div class="categories-grid" id="categoriesGrid">
+            </div>
+        </div>
+
+        <!-- Patologias List -->
+        <div class="patologias-list" id="patologiasList">
+            <div class="list-header">
+                <h2>Todas as Patologias</h2>
+                <span class="count" id="totalCount">0 patologias</span>
+            </div>
+            <div class="patologias-grid" id="patologiasGrid">
+            </div>
+        </div>
+
+        <!-- Detail View -->
+        <div class="detail-view" id="detailView" style="display: none;">
+            <div class="detail-header">
+                <button class="back-btn" onclick="closeDetail()">
+                    <span>←</span> Voltar
+                </button>
+                <h2 id="detailTitle">Patologia</h2>
+            </div>
+            <div class="detail-content">
+                <div class="detail-section">
+                    <h3>📋 Causas</h3>
+                    <p id="detailCausas"></p>
+                </div>
+                <div class="detail-section">
+                    <h3>💊 Tratamentos Recomendados</h3>
+                    <ul id="detailTratamentos"></ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" onclick="showHome()">
+            <span class="nav-icon">🏠</span>
+            <span>Início</span>
+        </button>
+        <button class="nav-btn" onclick="showFavorites()">
+            <span class="nav-icon">⭐</span>
+            <span>Favoritos</span>
+        </button>
+        <button class="nav-btn" onclick="showAbout()">
+            <span class="nav-icon">ℹ️</span>
+            <span>Sobre</span>
+        </button>
+    </nav>
+
+    <script src="patologias.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

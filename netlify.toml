@@ -1,8 +1,2 @@
 [build]
-  publish = "fisioterapia_app"
-  command = ""
-
-[[redirects]]
-  from = "/*"
-  to = "/fisioterapia_app/index.html"
-  status = 200
+  publish = "."
